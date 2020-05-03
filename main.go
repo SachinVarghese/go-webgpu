@@ -1,7 +1,9 @@
 package main
 
-import "log"
+import (
+	"github.com/SachinVarghese/go-webgpu/webgpu"
+)
 
 func main() {
-	log.Println("Webgpu works")
+	webgpu.CheckBrowserSupport()
 }
