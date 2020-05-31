@@ -15,3 +15,9 @@ func GetWebGPUSupport() bool {
 	gpu := navigator.Get("gpu")
 	return gpu.Truthy()
 }
+
+func GetWebGPUDevice() js.Value {
+	gpu := navigator.Get("gpu")
+	adapter := gpu.Call("requestAdapter")
+	return adapter.Call("requestDevice")
+}
